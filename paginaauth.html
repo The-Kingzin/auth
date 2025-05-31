@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificado</title>
+    <style>
+        /* Fundo com gradiente animado */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #1fcf97, #1e3c72);
+            background-size: 400% 400%;
+            color: white;
+            overflow: hidden;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Elementos flutuantes */
+        .floating-circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: floatCircle 6s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        .floating-circle:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            top: 50%;
+            right: 15%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            bottom: 20%;
+            left: 5%;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatCircle {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+        }
+
+        /* Container principal */
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Ícone com SVG animado */
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #1fcf97;
+            stroke-width: 6;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: draw 2s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Texto e Botão */
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #1fcf97;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            background: linear-gradient(135deg, #5b6def, #3a4db6);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(90, 110, 239, 0.6);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos de fundo flutuantes -->
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+
+    <div class="container">
+        <!-- Ícone SVG animado -->
+        <div class="icon">
+            <svg viewBox="0 0 100 100">
+                <path d="M10 50 L40 80 L90 20" />
+            </svg>
+        </div>
+        <h1>Você foi verificado!</h1>
+        <p>Esta página será fechada automaticamente em alguns segundos.</p>
+        <a href="https://discord.com" target="_blank">Voltar para o Discord</a>
+        <footer>
+            <p>Desenvolvido por Kingzin Solucions</p>
+        </footer>
+        <footer>
+        <p>Todos os direitos reservados a Kingzin Solucions &copy; 2025</p>
+    </footer>
+   </div>
+</body>
+</html>
